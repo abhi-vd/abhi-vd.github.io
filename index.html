@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhiram Duvvuri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f0f; --card: #161616; --border: #272727;
+      --text: #e2e2e2; --muted: #666; --orange: #f97316;
+      --mono: 'Geist Mono', monospace; --sans: 'Geist', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.6; max-width: 740px; margin: 0 auto; padding: 48px 24px 80px; }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { margin-bottom: 48px; }
+    header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+    header .handle { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+    header .handle a { color: var(--muted); }
+    header .handle a:hover { color: var(--orange); text-decoration: none; }
+    section { margin-bottom: 48px; }
+    h2 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .about-text { font-size: 14px; color: #aaa; line-height: 1.8; }
+    .about-text ul { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+    .about-text ul li::before { content: '→ '; color: var(--orange); font-family: var(--mono); }
+
+    /* icon grid */
+    .icons-grid { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; }
+    .icon-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+    .icon-item svg, .icon-item img { width: 36px; height: 36px; }
+    .icon-item span { font-family: var(--mono); font-size: 9px; color: var(--muted); text-align: center; white-space: nowrap; }
+    .icon-item.wide svg, .icon-item.wide img { width: auto; height: 28px; max-width: 80px; }
+
+    /* filter */
+    .filter-row { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+    .f { font-family: var(--mono); font-size: 11px; padding: 4px 12px; border: 1px solid var(--border); background: none; color: var(--muted); cursor: pointer; border-radius: 3px; }
+    .f:hover { color: var(--text); border-color: var(--muted); }
+    .f.on { border-color: var(--orange); color: var(--orange); background: rgba(249,115,22,.08); }
+
+    /* table */
+    table { width: 100%; border-collapse: collapse; }
+    thead th { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 500; text-align: left; padding: 0 12px 10px 0; border-bottom: 1px solid var(--border); }
+    thead th:last-child { text-align: right; padding-right: 0; }
+    tbody tr { border-bottom: 1px solid var(--border); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 12px 12px 12px 0; vertical-align: middle; font-size: 13px; }
+    tbody td:last-child { text-align: right; padding-right: 0; }
+    .name { font-family: var(--mono); font-size: 13px; color: var(--text); white-space: nowrap; }
+    .desc { color: var(--muted); font-size: 12px; }
+    .lang { display: flex; align-items: center; gap: 6px; white-space: nowrap; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+    .dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .js { background: #f1e05a; } .py { background: #3572a5; } .cpp { background: #f34b7d; } .html { background: #e34c26; }
+    .links { display: flex; gap: 6px; justify-content: flex-end; }
+    .lnk { font-family: var(--mono); font-size: 10px; padding: 3px 9px; border: 1px solid var(--border); color: var(--muted); border-radius: 3px; }
+    .lnk:hover { color: var(--text); border-color: var(--muted); text-decoration: none; }
+    .lnk.live { color: var(--orange); border-color: rgba(249,115,22,.4); }
+    .lnk.live:hover { background: rgba(249,115,22,.1); }
+    footer { font-family: var(--mono); font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 24px; }
+    @media (max-width: 500px) { .desc { display: none; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Abhiram Duvvuri</h1>
+  <div class="handle">
+    <a href="https://github.com/abhi-vd" target="_blank">@abhi-vd</a>
+    &nbsp;·&nbsp; github.com/abhi-vd
+  </div>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="about-text">
+    <ul>
+      <li>Freshman in high school</li>
+      <li>Interested in math, physics, robotics, and electronics</li>
+      <li>Working with Python, Java, HTML, CSS, JavaScript, C, C++, and C#</li>
+      <li>Currently learning PROS and LemLib for VEX V5RC Robotics programming</li>
+    </ul>
+
+    <div class="icons-grid">
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"/>
+        <span>Python</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java"/>
+        <span>Java</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML"/>
+        <span>HTML</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS"/>
+        <span>CSS</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript"/>
+        <span>JS</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C"/>
+        <span>C</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++"/>
+        <span>C++</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg" alt="C#"/>
+        <span>C#</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" alt="PyTorch"/>
+        <span>PyTorch</span>
+      </div>
+      <div class="icon-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow"/>
+        <span>TensorFlow</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="filter-row">
+    <button class="f on" onclick="filter('all',this)">All (15)</button>
+    <button class="f" onclick="filter('js',this)">JavaScript</button>
+    <button class="f" onclick="filter('py',this)">Python</button>
+    <button class="f" onclick="filter('cpp',this)">C++</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Description</th><th>Lang</th><th>Links</th>
+      </tr>
+    </thead>
+    <tbody id="tb">
+      <tr data-lang="js"><td class="name">quote-type</td><td class="desc">Typing speed test with random quotes from an API.</td><td><div class="lang"><span class="dot js"></span>JS</div></td><td><div class="links"><a href="https://abhi-vd.github.io/quote-type/" target="_blank" class="lnk live">Live</a><a href="https://github.com/abhi-vd/quote-type" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="js"><td class="name">pomodoro-timer</td><td class="desc">Customizable Pomodoro timer with ringtones.</td><td><div class="lang"><span class="dot js"></span>JS</div></td><td><div class="links"><a href="https://abhi-vd.github.io/pomodoro-timer/" target="_blank" class="lnk live">Live</a><a href="https://github.com/abhi-vd/pomodoro-timer" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="js"><td class="name">password-generator</td><td class="desc">Secure password generator with customizable options.</td><td><div class="lang"><span class="dot js"></span>JS</div></td><td><div class="links"><a href="https://abhi-vd.github.io/password-generator/" target="_blank" class="lnk live">Live</a><a href="https://github.com/abhi-vd/password-generator" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="js"><td class="name">dictionary-website</td><td class="desc">Word lookup — definitions, audio, synonyms, antonyms.</td><td><div class="lang"><span class="dot js"></span>JS</div></td><td><div class="links"><a href="https://abhi-vd.github.io/dictionary-website/" target="_blank" class="lnk live">Live</a><a href="https://github.com/abhi-vd/dictionary-website" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="js"><td class="name">expense-tracker</td><td class="desc">Track spending by category with a running total.</td><td><div class="lang"><span class="dot js"></span>JS</div></td><td><div class="links"><a href="https://abhi-vd.github.io/expense-tracker/" target="_blank" class="lnk live">Live</a><a href="https://github.com/abhi-vd/expense-tracker" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="js"><td class="name">weather-website</td><td class="desc">Live weather for any city via OpenWeatherMap API.</td><td><div class="lang"><span class="dot js"></span>JS</div></td><td><div class="links"><a href="https://github.com/abhi-vd/weather-website" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="py"><td class="name">snake-game</td><td class="desc">Classic Snake built with pygame-ce.</td><td><div class="lang"><span class="dot py"></span>Python</div></td><td><div class="links"><a href="https://github.com/abhi-vd/snake-game" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="py"><td class="name">space-shooter</td><td class="desc">2D space shooter built with pygame-ce.</td><td><div class="lang"><span class="dot py"></span>Python</div></td><td><div class="links"><a href="https://github.com/abhi-vd/space-shooter" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="py"><td class="name">cookie-clicker</td><td class="desc">Idle cookie clicker game built with pygame-ce.</td><td><div class="lang"><span class="dot py"></span>Python</div></td><td><div class="links"><a href="https://github.com/abhi-vd/cookie-clicker" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="py"><td class="name">shape-calculator</td><td class="desc">CLI tool for shape area and perimeter calculations.</td><td><div class="lang"><span class="dot py"></span>Python</div></td><td><div class="links"><a href="https://github.com/abhi-vd/shape-calculator" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="cpp"><td class="name">rpg-game</td><td class="desc">Text-based RPG written in C++.</td><td><div class="lang"><span class="dot cpp"></span>C++</div></td><td><div class="links"><a href="https://github.com/abhi-vd/rpg-game" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="cpp"><td class="name">file-organizer</td><td class="desc">Sorts files into folders by type using C++.</td><td><div class="lang"><span class="dot cpp"></span>C++</div></td><td><div class="links"><a href="https://github.com/abhi-vd/file-organizer" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="cpp"><td class="name">file-cryptography</td><td class="desc">File encryption/decryption using C++ and Crypto++.</td><td><div class="lang"><span class="dot cpp"></span>C++</div></td><td><div class="links"><a href="https://github.com/abhi-vd/file-cryptography" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="cpp"><td class="name">tic-tac-toe</td><td class="desc">Tic-Tac-Toe in the terminal, written in C++.</td><td><div class="lang"><span class="dot cpp"></span>C++</div></td><td><div class="links"><a href="https://github.com/abhi-vd/tic-tac-toe" target="_blank" class="lnk">Repo</a></div></td></tr>
+      <tr data-lang="html"><td class="name">abhi-vd.github.io</td><td class="desc">This portfolio.</td><td><div class="lang"><span class="dot html"></span>HTML</div></td><td><div class="links"><a href="https://abhi-vd.github.io" target="_blank" class="lnk live">Live</a><a href="https://github.com/abhi-vd/abhi-vd.github.io" target="_blank" class="lnk">Repo</a></div></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  abhiram duvvuri &nbsp;·&nbsp; <a href="https://github.com/abhi-vd" target="_blank">github.com/abhi-vd</a>
+</footer>
+
+<script>
+  function filter(lang, btn) {
+    document.querySelectorAll('.f').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    document.querySelectorAll('#tb tr').forEach(row => {
+      row.style.display = (lang === 'all' || row.dataset.lang === lang) ? '' : 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
